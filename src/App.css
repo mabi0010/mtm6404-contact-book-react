@@ -1,41 +1,88 @@
+/* Keep the root centering if you like, but let's make it look like a real app */
 #root {
-  max-width: 1280px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1, h2 {
+  color: #333;
+  border-bottom: 2px solid #646cff;
+  padding-bottom: 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Search and Add Button Area */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+input[type="text"], input[type="email"] {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
 }
 
-.card {
-  padding: 2em;
+/* The List of Contacts */
+.contact-list {
+  list-style: none;
+  padding: 0;
 }
 
-.read-the-docs {
-  color: #888;
+.contact-list li {
+  background: #f9f9f9;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.contact-list li:hover {
+  transform: translateX(10px);
+  background: #f0f0ff;
+}
+
+.contact-list a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #646cff;
+  font-weight: bold;
+}
+
+/* Buttons */
+.btn {
+  background-color: #646cff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #535bf2;
+}
+
+.btn-delete {
+  background-color: #ff4747;
+  margin-left: 10px;
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }

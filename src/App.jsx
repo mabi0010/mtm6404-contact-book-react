@@ -1,34 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ContactList from './views/ContactList';
+import ContactDetails from './views/ContactDetails';
+import ContactForm from './views/ContactForm';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className="App">
+        <header>
+          <h1>Contact Book</h1>
+        </header>
+        
+        <main>
+          <Routes>
+            {/* Home View - Shows all contacts */}
+            <Route path="/" element={<ContactList />} />
+            
+            {/* Details View - Shows one contact */}
+            <Route path="/contact/:id" element={<ContactDetails />} />
+            
+            {/* Add Contact View */}
+            <Route path="/add" element={<ContactForm />} />
+            
+            {/* Edit Contact View */}
+            <Route path="/edit/:id" element={<ContactForm />} />
+          </Routes>
+        </main>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
